@@ -1,0 +1,1701 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+$primary-font: "DM Sans", sans-serif;
+$primary-white: #fff;
+$primary-color: #334f35;
+$primary-black: #061123;
+$secondary-color: #964405;
+$tertiary-color: #2f4858;
+
+body {
+  font-family: $primary-font;
+  font-size: 1em;
+  color: $primary-white;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1em;
+  color: $primary-color;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-black;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.primary-text {
+  color: $primary-color;
+}
+
+.secondary-text {
+  color: $secondary-color;
+}
+
+ul {
+  padding-left: 0;
+  li {
+    list-style: none;
+  }
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.btn {
+  &.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    padding: 7px 20px;
+    &:hover {
+      background-color: $primary-black;
+      border-color: $primary-black;
+      color: $primary-white;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $primary-black;
+    border-color: $primary-black;
+    color: $primary-white;
+    padding: 7px 20px;
+    &:hover {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      color: $primary-white;
+    }
+  }
+}
+
+.login {
+  width: 450px;
+}
+
+.table-striped {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-striped table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sidebar {
+  ul {
+    li {
+      border-bottom: 1px solid rgba(6, 17, 35, 0.2);
+      margin-bottom: 2px;
+      a {
+        display: block;
+        padding: 10px;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+header {
+  background: linear-gradient(to right, $primary-color, $secondary-color);
+
+  .navbar-brand {
+    color: $primary-white;
+    font-size: 1.2em;
+  }
+
+  .navbar-expand-lg {
+    .navbar-nav {
+      .nav-link {
+        padding: 10px 10px;
+        font-size: 1em;
+        font-weight: 400;
+        color: $primary-white;
+
+        &:hover {
+          color: $primary-black;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .bot {
+      background: $primary-white;
+      color: $primary-black;
+      height: 38px;
+
+      display: block;
+
+      &:hover {
+        background: linear-gradient(to right, $primary-color, $secondary-color);
+      }
+    }
+  }
+}
+
+// for hero section animation
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-300px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.section-1 {
+  background-color: $primary-white;
+  color: $primary-black;
+  .container {
+    .hero {
+      display: flex;
+      align-items: center;
+
+      .slideInLeft {
+        animation-name: slideInLeft;
+        animation-timing-function: ease-in;
+      }
+
+      .hero-content {
+        h1 {
+          background: linear-gradient(
+            to right,
+            $primary-color,
+            $secondary-color
+          );
+
+          -webkit-background-clip: text;
+          background-clip: text;
+
+          font-weight: 700;
+          color: transparent;
+          background-size: 200%;
+          animation: animate 2s steps(5) infinite;
+          animation: animate 2s linear infinite;
+          animation: animate 2s ease infinite;
+        }
+
+        .hire {
+          background: linear-gradient(
+            to right,
+            $primary-color 40%,
+            $secondary-color
+          );
+          color: $primary-white;
+
+          &:hover {
+            background: $primary-white;
+            color: $primary-black;
+          }
+        }
+      }
+      .animate.animate--slow {
+        animation-duration: 2s;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+//for about animation
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.section-2 {
+  color: $primary-white;
+  background: linear-gradient(to right, $primary-color 40%, $secondary-color);
+
+  .container {
+    .head {
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+
+      img {
+        max-width: 75%;
+        border-radius: 30%;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+}
+
+@keyframes skill {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.shape-divider-bottom {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  background: transparent;
+}
+.shape-divider-bottom svg {
+  display: block;
+  height: 150px;
+  width: 100%;
+  transform: rotate(180deg);
+  fill: $primary-white;
+}
+.section-3 {
+  color: $primary-black;
+  .container {
+    animation: skill linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+
+    .skill {
+      .card {
+        background: linear-gradient(
+          to right,
+          $primary-color 40%,
+          $secondary-color
+        );
+        border-radius: 40px;
+      }
+
+      h4 {
+        color: $primary-white;
+      }
+
+      h3 {
+        color: $primary-white;
+      }
+
+      .skillcol {
+        .frontend {
+          .progress {
+            background: $primary-white;
+          }
+
+          .content {
+            .progress {
+              width: 95%;
+            }
+          }
+
+          .bootstrap {
+            .progress {
+              width: 85%;
+            }
+          }
+
+          .design {
+            .progress {
+              width: 80%;
+            }
+          }
+
+          .javascript {
+            .progress {
+              width: 75%;
+            }
+          }
+
+          .react {
+            .progress {
+              width: 80%;
+            }
+          }
+        }
+      }
+
+      .skillcol2 {
+        .backend {
+          .progress {
+            background: $primary-white;
+          }
+
+          .laravel {
+            .progress {
+              width: 90%;
+            }
+          }
+
+          .github {
+            .progress {
+              width: 95%;
+            }
+          }
+
+          .Apis {
+            .progress {
+              width: 85%;
+            }
+          }
+
+          .mysql {
+            .progress {
+              width: 75%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.service {
+  background-color: #f9f6f2;
+  color: $primary-black;
+  .container {
+    h5 {
+      font-weight: 700;
+      background: linear-gradient(to right, $primary-color, $secondary-color);
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .card {
+      border-radius: 30px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+        rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+        rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+      .card-img-top {
+        border-radius: 50px;
+        padding: 20px;
+      }
+      .card-body {
+        padding: 25px;
+        margin-top: -15px;
+      }
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.section-4 {
+  color: $primary-black;
+  .container {
+    .swiper {
+      padding: 25px 20px 50px 20px;
+      .swiper-pagination-bullet-active {
+        background-color: $primary-color;
+      }
+
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+
+    .swiper-slide {
+      height: auto;
+    }
+
+    .card {
+      border-radius: 40px;
+
+      .card-img-top {
+        width: 100%;
+        height: auto;
+      }
+
+      h3 {
+        background: linear-gradient(
+          to right,
+          $primary-color 40%,
+          $secondary-color
+        );
+      }
+
+      .github {
+        background: linear-gradient(
+          to right,
+          $primary-color 40%,
+          $secondary-color
+        );
+        color: $primary-white;
+
+        &:hover {
+          background: $primary-white;
+          color: $primary-black;
+        }
+      }
+    }
+  }
+}
+
+.shape-divider-top {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  background: transparent;
+}
+.shape-divider-top svg {
+  display: block;
+  height: 150px;
+  width: 100%;
+  fill: $primary-white;
+}
+
+@keyframes contact {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.section-6 {
+  background-color: #f9f6f2;
+  color: $primary-black;
+  .container {
+    h1 {
+      font-weight: 700;
+    }
+
+    .serve {
+      min-height: 300px;
+    }
+  }
+}
+
+.section-7 {
+  color: $primary-black;
+  .card {
+    padding: 1.5em 0.5em 0.5em;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    .card-img-top {
+      width: 50%;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    .card-text {
+      margin-top: 20px;
+    }
+  }
+}
+
+footer {
+  background: linear-gradient(to right, $primary-color, $secondary-color);
+  color: $primary-white;
+
+  .container {
+    .foot {
+      animation: contact linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+
+      .card {
+        border-radius: 40px;
+
+        button {
+          background: linear-gradient(
+            to right,
+            $primary-color,
+            $secondary-color
+          );
+
+          &:hover {
+            background: $primary-white;
+            color: $primary-black;
+          }
+        }
+      }
+    }
+
+    .icons {
+      .bi {
+        color: $primary-white;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  header {
+    .navbar-brand {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    .navbar-expand-lg {
+      .navbar-nav {
+        .nav-link {
+          font-size: 16px;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  .section-1 {
+    .hero-content {
+      h1 {
+        font-size: 40px;
+        line-height: 1.2;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 1.3;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .hire {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .bi {
+        width: 16px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .shape-divider-bottom {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .section-2 {
+    .head {
+      h1 {
+        font-size: 40px;
+        line-height: 1.2;
+      }
+
+      .about-content {
+        h2 {
+          font-size: 30px;
+          line-height: 1.3;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 1.6;
+        }
+      }
+    }
+
+    .shape-divider-bottom {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .section-3 {
+    h1 {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .skill {
+      h3 {
+        font-size: 28px;
+        line-height: 1.3;
+      }
+
+      h4 {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .skillcol {
+        .card {
+          width: 100%;
+          margin: 10px 0;
+          padding: 16px;
+          margin: 0 auto;
+        }
+      }
+
+      .skillcol2 {
+        .card {
+          width: 100%;
+          margin: 10px 0;
+          padding: 16px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .service {
+    h1 {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    h5 {
+      font-size: 22px;
+      line-height: 1.5;
+    }
+  }
+
+  .section-4 {
+    h1 {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    h5 {
+      font-size: 22px;
+      line-height: 1.5;
+    }
+
+    .card {
+      width: 100%;
+      margin: 12px 0;
+      padding: 16px;
+      h3 {
+        font-size: 18px;
+        line-height: 1.3;
+      }
+    }
+  }
+
+  .section-6 {
+    .container {
+      h1 {
+        font-size: 40px;
+        line-height: 1.2;
+      }
+
+      span {
+        font-size: 17px;
+        line-height: 1.5;
+      }
+
+      p {
+        font-size: 17px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .section-7 {
+    .container {
+      h1 {
+        font-size: 40px;
+        line-height: 1.2;
+      }
+
+      .card {
+        width: 100% !important;
+        font-size: 17px;
+
+        .card-img-top {
+          height: auto;
+          object-fit: cover;
+          border: none;
+        }
+      }
+    }
+  }
+
+  footer {
+    .shape-divider-top {
+      width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 40px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    h3 {
+      font-size: 28px;
+      line-height: 1.3;
+    }
+
+    .info {
+      svg {
+        width: 18px;
+      }
+      span {
+        font-size: 18px;
+      }
+    }
+
+    .foot {
+      .card {
+        width: 100%;
+        margin: 10px 0;
+        padding: 16px;
+
+        input {
+          font-size: 18px;
+        }
+
+        textarea {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .line {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+
+    .copy {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    .navbar-brand {
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .navbar-expand-lg {
+      .navbar-nav {
+        .nav-link {
+          font-size: 15px;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  .section-1 {
+    .hero-content {
+      h1 {
+        font-size: 34px;
+        line-height: 1.2;
+      }
+
+      h3 {
+        font-size: 22px;
+        line-height: 1.3;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .hire {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .bi {
+        width: 15px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .shape-divider-bottom {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .section-2 {
+    .head {
+      h1 {
+        font-size: 34px;
+        line-height: 1.2;
+      }
+
+      .about-content {
+        h2 {
+          font-size: 26px;
+          line-height: 1.3;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 1.6;
+        }
+      }
+    }
+
+    .shape-divider-bottom {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .section-3 {
+    h1 {
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .skill {
+      h3 {
+        font-size: 24px;
+        line-height: 1.3;
+      }
+
+      h4 {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .skillcol {
+        .card {
+          width: 100%;
+          margin: 10px 0;
+          padding: 16px;
+          margin: 0 auto;
+        }
+      }
+
+      .skillcol2 {
+        .card {
+          width: 100%;
+          margin: 10px 0;
+          padding: 16px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .service {
+    h1 {
+      font-size: 34px;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    h5 {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+
+  .section-4 {
+    h1 {
+      font-size: 34px;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    h3 {
+      font-size: 24px;
+      line-height: 1.3;
+    }
+
+    h5 {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .card {
+      width: 100%;
+      margin: 10px 0;
+      padding: 16px;
+    }
+  }
+
+  .section-6 {
+    .container {
+      h1 {
+        font-size: 34px;
+        line-height: 1.2;
+      }
+
+      span {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .section-7 {
+    .container {
+      h1 {
+        font-size: 34px;
+        line-height: 1.2;
+      }
+
+      .card {
+        width: 100% !important;
+        font-size: 16px;
+
+        .card-img-top {
+          height: auto;
+          object-fit: cover;
+          border: none;
+        }
+      }
+    }
+  }
+
+  footer {
+    .shape-divider-top {
+      width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    h3 {
+      font-size: 24px;
+      line-height: 1.3;
+    }
+
+    .info {
+      svg {
+        width: 17px;
+      }
+      span {
+        font-size: 17px;
+      }
+    }
+
+    .foot {
+      .card {
+        width: 100%;
+        margin: 10px 0;
+        padding: 16px;
+
+        input {
+          font-size: 16px;
+        }
+
+        textarea {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .line {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+
+    .copy {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    .navbar-brand {
+      font-size: 20px;
+    }
+
+    .navbar-toggler {
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar-expand-lg {
+      .navbar-nav {
+        .nav-link {
+          text-align: center;
+          font-size: 15px;
+          padding: 8px 12x;
+        }
+      }
+    }
+  }
+
+  .section-1 {
+    .hero-content {
+      h1 {
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 1.3;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .hire {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .bi {
+        width: 15px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .shape-divider-bottom {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .section-2 {
+    .head {
+      h1 {
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      img {
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .about-content {
+        h2 {
+          font-size: 28px;
+          line-height: 1.3;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 1.6;
+        }
+      }
+    }
+    .shape-divider-bottom {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .section-3 {
+    h1 {
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .skill {
+      h3 {
+        font-size: 20px;
+        line-height: 1.3;
+      }
+
+      h4 {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .skillcol {
+        .card {
+          width: 100%;
+          margin: 10px 0;
+          padding: 16px;
+          margin: 0 auto;
+        }
+      }
+
+      .skillcol2 {
+        .card {
+          width: 100%;
+          margin: 10px 0;
+          padding: 16px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .service {
+    h1 {
+      font-size: 32px;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    h5 {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+
+  .section-4 {
+    h1 {
+      font-size: 32px;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    h5 {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .card {
+      width: 100%;
+      margin: 10px 0;
+      padding: 16px;
+    }
+  }
+
+  .section-6 {
+    .container {
+      h1 {
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      span {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .section-7 {
+    .container {
+      h1 {
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      .card {
+        width: 100% !important;
+        font-size: 15px;
+
+        .card-img-top {
+          height: auto;
+          object-fit: cover;
+          border: none;
+        }
+      }
+    }
+  }
+
+  footer {
+    .shape-divider-top {
+      width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .info {
+      svg {
+        width: 17px;
+      }
+      span {
+        font-size: 17px;
+      }
+    }
+
+    .foot {
+      .card {
+        width: 100%;
+        margin: 10px 0;
+        padding: 16px;
+
+        input {
+          font-size: 15px;
+        }
+
+        textarea {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .line {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+
+    .copy {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    .navbar-brand {
+      font-size: 20px;
+    }
+
+    .navbar-toggler {
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar-expand-lg {
+      .navbar-nav {
+        .nav-link {
+          text-align: center;
+          font-size: 14px;
+        }
+      }
+      .bot {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .section-1 {
+    .hero-content {
+      text-align: center;
+
+      h1 {
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      h3 {
+        font-size: 18px;
+        line-height: 1.3;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .hire {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .bi {
+        width: 15px;
+      }
+    }
+
+    img {
+      display: none;
+    }
+
+    .shape-divider-bottom {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .section-2 {
+    .head {
+      h1 {
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      img {
+        max-width: 50%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .about-content {
+        text-align: center;
+        h2 {
+          font-size: 22px;
+          line-height: 1.3;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+    .shape-divider-bottom {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .section-3 {
+    h1 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 15px;
+    }
+    .skill {
+      h3 {
+        font-size: 18px;
+        line-height: 1.3;
+      }
+
+      h4 {
+        font-size: 15px;
+        line-height: 1.4;
+      }
+
+      .skillcol {
+        .card {
+          width: 100%;
+          margin: 10px 0;
+          padding: 16px;
+          margin: 0 auto;
+        }
+      }
+
+      .skillcol2 {
+        margin-top: 20px;
+        .card {
+          width: 100%;
+          margin: 10px 0;
+          padding: 16px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .service {
+    h1 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 15px;
+    }
+
+    h5 {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .card {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+    }
+  }
+
+  .section-4 {
+    h1 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 15px;
+    }
+
+    h3 {
+      font-size: 17px;
+      line-height: 1.3;
+    }
+
+    h5 {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .card {
+      width: 100%;
+      margin: 10px 0;
+      padding: 16px;
+    }
+  }
+
+  .section-6 {
+    .container {
+      h1 {
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      span {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .section-7 {
+    .container {
+      h1 {
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      .card {
+        width: 100% !important;
+        font-size: 14px;
+
+        .card-img-top {
+          height: auto;
+          object-fit: cover;
+          border: none;
+        }
+      }
+    }
+  }
+
+  footer {
+    .shape-divider-top {
+      width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .info {
+      svg {
+        width: 15px;
+      }
+      span {
+        font-size: 15px;
+      }
+    }
+
+    .foot {
+      .card {
+        width: 100%;
+        margin: 10px 0;
+        margin-top: 20px;
+        padding: 16px;
+
+        input {
+          font-size: 14px;
+        }
+
+        textarea {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .line {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+
+    .copy {
+      font-size: 14px;
+    }
+  }
+
+  .responsive-form {
+    .login {
+      width: 100%;
+      h3 {
+        font-size: 18px;
+      }
+    }
+    input {
+      font-size: 16px;
+    }
+    button {
+      font-size: 16px;
+    }
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+    font-size: 16px;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+
+  td::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
+}
