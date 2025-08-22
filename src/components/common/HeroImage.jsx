@@ -1,7 +1,7 @@
 import React from "react";
 import heroImg from "../../assets/images/tosin0.jpg";
 import { Link } from "react-router-dom";
-import resume from "../../assets/tosin_olarewaju.pdf";
+import resume from "../../assets/Tosin_Olarewaju_Resume.pdf";
 
 const HeroImage = () => {
   return (
