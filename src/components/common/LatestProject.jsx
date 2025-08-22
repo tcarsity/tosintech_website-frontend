@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Project from "./Project";
 import WebDevServices from "./WebDevServices";
+import { Link } from "react-router-dom";
 
 const LatestProject = () => {
   const [projects, setProjects] = useState([]);
@@ -67,7 +68,7 @@ const LatestProject = () => {
                     return (
                       <SwiperSlide>
                         <div
-                          className="card shadow border-0 h-100"
+                          className="card shadow border-0 h-100 d-flex flex-column"
                           key={`project-${project.id}`}
                         >
                           <img
@@ -75,8 +76,8 @@ const LatestProject = () => {
                             src={`${fileUrl}uploads/projects/small/${project.image}`}
                             alt=""
                           />
-                          <div className="card-body p-4">
-                            <h3 className="btn btn-primary btn-sm disabled rounded-pill h3">
+                          <div className="card-body p-4 d-flex flex-column flex-grow-1">
+                            <h3 className="btn btn-primary btn-sm disabled rounded-pill h3 w-50">
                               {project.site}
                             </h3>
                             <h5 className="card-title mt-3">{project.title}</h5>
@@ -87,12 +88,14 @@ const LatestProject = () => {
                                 __html: project.content,
                               }}
                             ></p>
-                            <a
-                              href="https://github.com/tcarsity"
-                              className="btn btn-primary rounded-pill mt-auto github"
-                            >
-                              View Code in Github
-                            </a>
+                            <div className="mt-auto">
+                              <Link
+                                to="https://github.com/tcarsity"
+                                className="btn btn-primary rounded-pill  github"
+                              >
+                                View Code in Github
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </SwiperSlide>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { apiUrl } from "./http";
 import { useForm } from "react-hook-form";
@@ -6,6 +6,8 @@ import ShapeDividerTop from "../ShapeDividerTop";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -15,23 +17,25 @@ const Footer = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setLoading(true);
     const res = await fetch(apiUrl + "/contact-now", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify(data),
-    });
-
-    const result = await res.json();
-
-    if (result.status == true) {
-      toast.success(result.message);
-      console.log(result);
-      reset();
-    } else {
-      toast.error(result.message);
-    }
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setLoading(false);
+        if (result.status == true) {
+          toast.success(result.message);
+          reset();
+        } else {
+          toast.error(result.message);
+        }
+      });
   };
   return (
     <>
@@ -245,10 +249,11 @@ const Footer = () => {
                     </div>
                     <div className="d-grid">
                       <button
+                        disabled={loading}
                         type="submit"
                         className="btn btn-primary mt-3 rounded-pill"
                       >
-                        Send Message
+                        {loading == false ? "Send Message" : "Please wait..."}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="18"
