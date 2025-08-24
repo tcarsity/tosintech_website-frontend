@@ -14,5 +14,23 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="text/javascript">
+      (function (I) {
+        if (I.search[1] === "/") {
+          var decoded = I.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            I.pathname.slice(0, -1) + decoded + I.hash
+          );
+        }
+      })(window.location);
+    </script>
   </body>
 </html>
